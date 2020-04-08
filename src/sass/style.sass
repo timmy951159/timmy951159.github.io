@@ -1,0 +1,249 @@
+@import 'variables'
+
+.block-title
+    padding: 90px 0 50px 0
+    display: flex
+    justify-content: center
+    .block-title__text
+        width: 180px
+        height: 50px
+        background-color: $main-color
+        color: #fff
+        font-size: 20px
+        border-radius: 5px
+        line-height: 48px
+        text-align: center
+        font-weight: 900
+
+.cube
+    height: 145px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    border-radius: 5px
+    &:hover
+        text-decoration: none
+        opacity: .7
+    img
+        width: 60px
+        height: 64px
+    .cube-text
+        color: #fff
+        font-weight: 900
+        margin-top: 5px
+
+.card
+    // margin: 0 20px
+
+.card-title
+    color: $main-color
+    font-weight: 900
+    line-height: 1.25
+    -webkit-box-orient: vertical
+    -webkit-line-clamp: 2
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box
+    height: 50px
+
+.card-main-text
+    -webkit-box-orient: vertical
+    -webkit-line-clamp: 5
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box
+    height: 120px
+
+.card-info-text
+    -webkit-box-orient: vertical
+    -webkit-line-clamp: 3
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box
+    height: 70px
+
+.foreword
+    width: 700px
+    margin: 0 auto
+    padding: 15px
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1)
+    margin-bottom: 50px
+    .foreword__title
+        color: $main-color
+        font-size: 24px
+        font-weight: 900
+        padding-bottom: 10px
+        width: 330px;
+        margin: 0 auto;
+        margin-bottom: 10px
+        text-align: center
+        border-bottom: 2px solid $main-color
+    .foreword__inner
+        font-size: 16px
+    .foreword__btn
+
+footer
+    background-color: #595959
+    padding: 20px
+    p
+        color: #fff
+
+.ad
+    width: 100%
+    height: 100%
+    position: fixed
+    left: 0
+    top: 0
+    display: flex;
+    margin: auto
+    font-size: 0
+    background: rgba(0,0,0,0.8)
+    z-index: 99
+    .ad-container
+        width: 50%
+        height: auto
+        background-color: #fff
+        margin: auto
+        position: relative
+        img
+            width: 100%
+        .cancel-btn
+            position: absolute
+            right: -20px
+            top: -20px
+            cursor: pointer
+            img
+                width: 40px
+                height: 40px
+
+.d-none
+    display:none
+
+.form__title
+    text-align: center
+    color: $main-color
+    border-bottom: 1px solid $main-color
+    margin-bottom: 30px
+    h1
+        font-size: 24px
+        font-weight: 900
+
+.member-info
+    padding: 30px 0
+    .member-info__btn
+        text-align: right
+    
+.photo
+    width: 150px
+    height: 150px
+    background-color: $main-color
+    border-radius: 5px
+    margin: auto
+    position: relative
+    img
+        position: relative
+        width: 150px
+        height: 150px
+        top: 0
+
+.course-row
+    box-shadow: 2px 2px 10px rgba(0,0,0,.1)
+    display: flex
+    align-items: center
+    margin-bottom: 20px
+    height: 165px
+    font-size: 14px
+    & > div
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        overflow: hidden
+    .course-row__id
+        color: $main-color
+        font-weight: 900
+        font-size: 20px
+    .course-row__name
+        border-left: 2px solid $main-color
+        color: $main-color
+        font-weight: 900
+    .course-row__category
+        background-color: #e4f4f4
+    .course-row__teacher
+        background-color: #e4f4f4
+
+.question-title
+    font-size: 18px
+    font-weight: 900
+    background-color: $main-color
+    color: #fff
+    border-radius: 5px
+    width: 185px
+    margin: auto
+    text-align: center
+    padding: 10px 0
+    margin-bottom: 15px
+.question
+    margin-bottom: 5px
+.star-group
+    margin-bottom: 30px
+    direction: rtl
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:300i,400,500,600&display=swap')
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+
+.inner-content 
+    margin: 25px 0
+
+.inner-content  input[type="radio"]
+    display: none
+
+
+.inner-content i
+	color: #dddddd
+	font-size: 24px
+	cursor: pointer
+
+
+.inner-content  input[type="radio"]:checked ~ label  i
+	color: #FFD700
+
+
+.inner-content 
+	width: 100%
+
+
+.inner-content h3 
+	margin: 0 0 15px 0
+	font-size: 24px
+
+  
+
+  
+
+
+@media screen and ( max-width: 992px ) 
+    .cube
+        margin: 15px 0
+
+@media screen and ( max-width: 768px ) 
+    .foreword
+        width: 100%
+        .foreword__title
+            width: 100%
+    
+    .member-info .member-info__btn
+        text-align: center
+        
+    .course-row
+        height: auto
+        width: 100%
+        margin: auto
+        margin-bottom: 20px;
+        & > div
+            padding: 20px 5px
+        .course-row__id
+            border-bottom: 2px solid $main-color
+        .course-row__name
+            border-left: none

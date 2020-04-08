@@ -1,0 +1,143 @@
+@import 'variables'
+
+body 
+    font-family: -apple-system,BlinkMacSystemFont,"Microsoft Jhenghei","Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
+
+.bg-main
+    background-color: $main-color
+
+.container-fluid
+    max-width: 1200px
+    width: 100%
+
+.c-white
+    color: #fff
+    &:hover
+        color: #fff
+
+.c-gray
+    color: #555
+
+.bg-orange
+    background-color: #f77b55
+
+.bg-lightblue
+    background-color: #91d3d9
+
+.bg-yellow
+    background-color: #ffc370
+
+.slick-prev:before, .slick-next:before
+    color: $main-color
+    // font-size: 36px
+
+.slick-slider
+    -webkit-user-select: auto
+    user-select: auto
+
+.btn-primary
+    background-color: $main-color
+    border: 1px solid $main-color
+    color: #fff
+    &:hover
+        color: #fff
+        opacity: .9
+
+.btn-second
+    background-color: $second-color
+    border: 1px solid $second-color
+    color: #fff
+    &:hover
+        color: #fff
+        opacity: .9
+
+.modal-header
+    border-bottom: none
+
+.form-submit
+    width: 100%
+    color: #fff
+    background-color: $main-color
+    border: none
+    border-radius: 5px
+    padding: 10px 0
+    margin-top: 20px
+
+.underline
+    text-decoration: underline
+
+.modal-dialog
+    width: 350px
+
+.pointer
+    cursor: pointer
+
+.modal-header 
+    padding: 1rem 1rem 0 1rem
+
+.custom-file-input
+    height: 100%
+    position: absolute
+    &:hover
+        cursor: pointer
+
+.navbar-nav
+    margin-left: auto
+
+.navbar-light .navbar-nav .nav-link
+    color: #fff
+    &:hover
+        color: #eee
+    
+.navbar-dark .navbar-brand
+    &:hover
+        opacity: .8
+    img
+        width: 105px
+.page-navigation
+    margin-top: 50px
+    .page-link
+        color: $main-color
+        border: none
+
+.input-group-text
+    background-color: $main-color
+    color: #fff
+    border: 1px solid $main-color
+
+.bg-primary
+    background-color: $main-color!important
+
+.navbar-dark .navbar-nav .nav-link
+    color: #fff
+    text-align: center
+
+#courseCenterTab .nav-tabs 
+    border-bottom: 2px solid #51b2ba
+    background-color: #e4f4f4
+
+#courseCenterTab .nav-tabs .nav-item.show .nav-link, #courseCenterTab  .nav-tabs .nav-link.active
+    border-color: #51b2ba #51b2ba #fff
+
+#courseCenterTab .nav-tabs .nav-link
+    border: 2px solid transparent
+    color: $main-color
+    font-size: 20px
+    font-weight: 900
+    padding: 1rem
+    img
+        width: 30px
+        height: 30px
+        margin-right: 5px
+
+#courseCenterTab .nav-tabs .nav-item
+    margin-bottom: -2px
+
+@media screen and ( max-width: 768px )
+    #courseCenterTab .nav-tabs .nav-link
+        width: 33.3%
+        font-size: 14px
+        text-align: center
+        padding: .5rem
+        img
+            display: none

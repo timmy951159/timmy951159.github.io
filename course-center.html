@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta property="og:title" content="..." />
+    <meta property="og:type" content="...">
+    <meta property="og:image" content="..." />
+    <meta property="og:description" content="...">
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div id="header"></div>
+        <div id="member-info">
+            <div class="member-info container">
+                <form>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-12">
+                            <div class="photo">
+                                <input type="file" class="custom-file-input" onchange="showThumbnail(this)">
+                                <img class="img-thumbnail" src="./src/images/user_default.png">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-12">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>姓名</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>生日</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>電子信箱</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>職稱</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>手機</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>工作單位</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="member-info__btn">
+                                <input type="submit" class="btn btn-primary" value="儲存">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <nav id="courseCenterTab">
+                <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+                        aria-controls="nav-home" aria-selected="true"><img src="./src/images/Group 178.png">最新課程</a>
+                    <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                        role="tab" aria-controls="nav-profile" aria-selected="false"><img src="./src/images/Group 183.png">上課歷程</a>
+                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+                        aria-controls="nav-contact" aria-selected="false"><img src="./src/images/Group 189.png">成果見證與分享</a>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="block-title">
+                        <div class="block-title__text">課程分類</div>
+                    </div>
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-lg-2">
+                            <a href="javascript:;" class="cube bg-orange" onclick="getCourse('new-course-all')">
+                                <img src="./src/images/course-icon-0.png" />
+                                <div class="cube-text">全部</div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2">
+                            <a href="javascript:;" class="cube bg-lightblue" onclick="getCourse('new-course-catering')">
+                                <img src="./src/images/course-icon-1.png" />
+                                <div class="cube-text">餐飲</div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2">
+                            <a href="javascript:;" class="cube bg-yellow" onclick="getCourse('new-course-retail')">
+                                <img src="./src/images/course-icon-2.png" />
+                                <div class="cube-text">零售</div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2">
+                            <a href="javascript:;" class="cube bg-lightblue" onclick="getCourse('new-course-management')">
+                                <img src="./src/images/course-icon-3.png" />
+                                <div class="cube-text">主管</div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2">
+                            <a href="javascript:;" class="cube bg-orange" onclick="getCourse('new-course-workshop')">
+                                <img src="./src/images/course-icon-4.png" />
+                                <div class="cube-text">工作坊</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="newCourseContent"></div>
+                </div>
+                <div class="tab-pane fade show active" id="nav-profile" role="tabpanel"
+                    aria-labelledby="nav-profile-tab">
+                    <div class="block-title">
+                        <div class="block-title__text">已完成課程</div>
+                    </div>
+                    <div class="course-container">
+                        <div class="row course-row">
+                            <div class="col-lg-1 course-row__id">
+                                1
+                            </div>
+                            <div class="col-lg-3 course-row__name">
+                                猶似吾願當路百里鶴樓，不見千金可憐夕涼今夜黃金
+                            </div>
+                            <div class="col-lg-2 course-row__category">
+                                課程類別 :
+                                <span>行銷業務</span>
+                            </div>
+                            <div class="col-lg-2 course-row__info">
+                                時間 : 2020-04-30(四) 09:30 ~ 16:30 <br>
+                                地點 : 台灣高雄市鹽埕區中正四路274號 <br>
+                                高雄國際會議中心
+                            </div>
+                            <div class="col-lg-2 course-row__teacher text-center">
+                                講師 :
+                                <span>劉故園</span>
+                            </div>
+                            <div class="col-lg-2 course-row__options">
+                                <div class="btn-group-vertical text-center">
+                                    <button class="btn btn-primary" onclick="window.open('certificate.html')">列印證書</button>
+                                    <button class="btn btn-second" data-toggle="modal" data-target="#questionnaireModal"
+                                        data-dismiss="modal">問卷調查</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row course-row">
+                            <div class="col-lg-1 course-row__id">
+                                2
+                            </div>
+                            <div class="col-lg-3 course-row__name">
+                                猶似吾願當路百里鶴樓，不見千金可憐夕涼今夜黃金
+                            </div>
+                            <div class="col-lg-2 course-row__category">
+                                課程類別 :
+                                <span>行銷業務</span>
+                            </div>
+                            <div class="col-lg-2 course-row__info">
+                                時間 : 2020-04-30(四) 09:30 ~ 16:30 <br>
+                                地點 : 台灣高雄市鹽埕區中正四路274號 <br>
+                                高雄國際會議中心
+                            </div>
+                            <div class="col-lg-2 course-row__teacher text-center">
+                                講師 :
+                                <span>劉故園</span>
+                            </div>
+                            <div class="col-lg-2 course-row__options">
+                                <div class="btn-group-vertical text-center">
+                                    <button class="btn btn-primary">列印證書</button>
+                                    <button class="btn btn-second" data-toggle="modal" data-target="#questionnaireModal"
+                                        data-dismiss="modal">問卷調查</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row course-row">
+                            <div class="col-lg-1 course-row__id">
+                                3
+                            </div>
+                            <div class="col-lg-3 course-row__name">
+                                猶似吾願當路百里鶴樓，不見千金可憐夕涼今夜黃金
+                            </div>
+                            <div class="col-lg-2 course-row__category">
+                                課程類別 :
+                                <span>行銷業務</span>
+                            </div>
+                            <div class="col-lg-2 course-row__info">
+                                時間 : 2020-04-30(四) 09:30 ~ 16:30 <br>
+                                地點 : 台灣高雄市鹽埕區中正四路274號 <br>
+                                高雄國際會議中心
+                            </div>
+                            <div class="col-lg-2 course-row__teacher text-center">
+                                講師 :
+                                <span>劉故園</span>
+                            </div>
+                            <div class="col-lg-2 course-row__options">
+                                <div class="btn-group-vertical text-center">
+                                    <button class="btn btn-primary">列印證書</button>
+                                    <button class="btn btn-second" data-toggle="modal" data-target="#questionnaireModal"
+                                        data-dismiss="modal">問卷調查</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-navigation">
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="course-container">
+                        <div class="block-title">
+                            <div class="block-title__text">待上課程</div>
+                        </div>
+                        <div class="row course-row">
+                            <div class="col-lg-1 course-row__id">
+                                1
+                            </div>
+                            <div class="col-lg-3 course-row__name">
+                                猶似吾願當路百里鶴樓，不見千金可憐夕涼今夜黃金
+                            </div>
+                            <div class="col-lg-2 course-row__category">
+                                課程類別 :
+                                <span>行銷業務</span>
+                            </div>
+                            <div class="col-lg-2 course-row__info">
+                                時間 : 2020-04-30(四) 09:30 ~ 16:30 <br>
+                                地點 : 台灣高雄市鹽埕區中正四路274號 <br>
+                                高雄國際會議中心
+                            </div>
+                            <div class="col-lg-2 course-row__teacher text-center">
+                                講師 :
+                                <span>劉故園</span>
+                            </div>
+                            <div class="col-lg-2 course-row__options">
+                                <div class="btn-group-vertical text-center">
+                                    <button class="btn btn-primary">課程介紹</button>
+                                    <button class="btn btn-secondary" data-toggle="modal"
+                                        data-target="#cancelCourseModal" data-dismiss="modal">取消課程</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row course-row">
+                            <div class="col-lg-1 course-row__id">
+                                2
+                            </div>
+                            <div class="col-lg-3 course-row__name">
+                                猶似吾願當路百里鶴樓，不見千金可憐夕涼今夜黃金
+                            </div>
+                            <div class="col-lg-2 course-row__category">
+                                課程類別 :
+                                <span>行銷業務</span>
+                            </div>
+                            <div class="col-lg-2 course-row__info">
+                                時間 : 2020-04-30(四) 09:30 ~ 16:30 <br>
+                                地點 : 台灣高雄市鹽埕區中正四路274號 <br>
+                                高雄國際會議中心
+                            </div>
+                            <div class="col-lg-2 course-row__teacher text-center">
+                                講師 :
+                                <span>劉故園</span>
+                            </div>
+                            <div class="col-lg-2 course-row__options">
+                                <div class="btn-group-vertical text-center">
+                                    <button class="btn btn-primary">課程介紹</button>
+                                    <button class="btn btn-secondary" data-toggle="modal"
+                                        data-target="#cancelCourseModal" data-dismiss="modal">取消課程</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row course-row">
+                            <div class="col-lg-1 course-row__id">
+                                3
+                            </div>
+                            <div class="col-lg-3 course-row__name">
+                                猶似吾願當路百里鶴樓，不見千金可憐夕涼今夜黃金
+                            </div>
+                            <div class="col-lg-2 course-row__category">
+                                課程類別 :
+                                <span>行銷業務</span>
+                            </div>
+                            <div class="col-lg-2 course-row__info">
+                                時間 : 2020-04-30(四) 09:30 ~ 16:30 <br>
+                                地點 : 台灣高雄市鹽埕區中正四路274號 <br>
+                                高雄國際會議中心
+                            </div>
+                            <div class="col-lg-2 course-row__teacher text-center">
+                                講師 :
+                                <span>劉故園</span>
+                            </div>
+                            <div class="col-lg-2 course-row__options">
+                                <div class="btn-group-vertical text-center">
+                                    <button class="btn btn-primary">課程介紹</button>
+                                    <button class="btn btn-secondary" data-toggle="modal"
+                                        data-target="#cancelCourseModal" data-dismiss="modal">取消課程</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-navigation">
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div class="block-title">
+                        <div class="block-title__text">成果見證與分享</div>
+                    </div>
+
+                    <form action="">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">課程名稱</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01">
+                                <option selected>請選擇課程...</option>
+                                <option value="1">課程1課程1課程1課程1</option>
+                                <option value="2">課程2課程2課程2課程2</option>
+                                <option value="3">課程3課程3課程3課程3</option>
+                                <option value="3">課程4課程4課程4課程4</option>
+                                <option value="3">課程5課程5課程5課程5</option>
+                                <option value="3">課程6課程6課程6課程6</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">檔案上傳</span>
+                                </div>
+                                <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="expUpload" aria-describedby="inputGroupFileAddon01">
+                                <label id="expLabel" class="custom-file-label" for="expUpload">請選擇檔案...</label>
+                            </div>
+                        </div>
+                        <span class="text-secondary mb-3"><small>上傳格式為png、jpg，檔案大小不超過100MB</small></span>
+                            
+                        </div>
+                        <div class="mb-5">
+                            <textarea class="form-control" rows="10" placeholder="文字心得描述 ..."></textarea>
+                        </div>
+                        <div class="mb-5 text-center">
+                            <input type="submit" class="btn btn-primary" value="送 出">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="footer"></div>
+
+        <!-- 以下為互動式窗 (Modal) -->
+        <!-- 以下為互動式窗 (Modal) -->
+        <!-- 以下為互動式窗 (Modal) -->
+        <!-- 以下為互動式窗 (Modal) -->
+        <!-- 以下為互動式窗 (Modal) -->
+        <!-- 以下為互動式窗 (Modal) -->
+
+        <!-- 取消課程 -->
+        <div class="modal fade" id="cancelCourseModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form">
+                            <div class="form__title">
+                                <h1>取消課程</h1>
+                            </div>
+                            <div class="form__body">
+                                <p>是否確定取消該課程? (開課當天前三天以前可取消該課程)</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">否</button>
+                                <button type="button" class="btn btn-primary">確定取消課程</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 問卷調查 -->
+        <div class="modal fade" id="questionnaireModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form">
+                            <div class="form__title">
+                                <h1>問卷調查</h1>
+                            </div>
+                            <div class="form__body">
+                                <form>
+                                    <div class="inner-content">
+                                        <h2 class="question-title">活動整體規劃</h2>
+                                        <div class="question">
+                                            <p>請問你對於本課程現場工作人員的態度感到</p>
+                                        </div>
+                                        <div class="star-group">
+                                            <input type="radio" name="starRating-1" id="star1" value="1">
+                                            <label for="star1"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-1" id="star2" value="2">
+                                            <label for="star2"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-1" id="star3" value="3">
+                                            <label for="star3"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-1" id="star4" value="4">
+                                            <label for="star4"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-1" id="star5" value="5">
+                                            <label for="star5"><i class="fa fa-star"></i></label>
+                                        </div>
+                                        <div class="question">
+                                            <p>請問您對於本課程上課時間安排感到</p>
+                                        </div>
+                                        <div class="star-group">
+                                            <input type="radio" name="starRating-2" id="star6" value="1">
+                                            <label for="star6"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-2" id="star7" value="2">
+                                            <label for="star7"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-2" id="star8" value="3">
+                                            <label for="star8"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-2" id="star9" value="4">
+                                            <label for="star9"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-2" id="star10" value="5">
+                                            <label for="star10"><i class="fa fa-star"></i></label>
+                                        </div>
+                                        <div class="question">
+                                            <p>請問您對於本課程的教材/資料提供感到</p>
+                                        </div>
+                                        <div class="star-group">
+                                            <input type="radio" name="starRating-3" id="star11" value="1">
+                                            <label for="star11"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-3" id="star12" value="2">
+                                            <label for="star12"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-3" id="star13" value="3">
+                                            <label for="star13"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-3" id="star14" value="4">
+                                            <label for="star14"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-3" id="star15" value="5">
+                                            <label for="star15"><i class="fa fa-star"></i></label>
+                                        </div>
+                                        <h2 class="question-title">個別課程滿意度調查</h2>
+                                        <div class="question">
+                                            <p>請問您參與本課程的安排及實用性感到</p>
+                                        </div>
+                                        <div class="star-group">
+                                            <input type="radio" name="starRating-4" id="star16" value="1">
+                                            <label for="star16"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-4" id="star17" value="2">
+                                            <label for="star17"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-4" id="star18" value="3">
+                                            <label for="star18"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-4" id="star19" value="4">
+                                            <label for="star19"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-4" id="star20" value="5">
+                                            <label for="star20"><i class="fa fa-star"></i></label>
+                                        </div>
+                                        <div class="question">
+                                            <p>請問您參與該課程講師的上課態度是否感到滿意</p>
+                                        </div>
+                                        <div class="star-group">
+                                            <input type="radio" name="starRating-5" id="star21" value="1">
+                                            <label for="star21"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-5" id="star22" value="2">
+                                            <label for="star22"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-5" id="star23" value="3">
+                                            <label for="star23"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-5" id="star24" value="4">
+                                            <label for="star24"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-5" id="star25" value="5">
+                                            <label for="star25"><i class="fa fa-star"></i></label>
+                                        </div>
+                                        <div class="question">
+                                            <p>請問您參與該課程講師的互動方式是否感到滿意</p>
+                                        </div>
+                                        <div class="star-group">
+                                            <input type="radio" name="starRating-6" id="star26" value="1">
+                                            <label for="star26"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-6" id="star27" value="2">
+                                            <label for="star27"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-6" id="star28" value="3">
+                                            <label for="star28"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-6" id="star29" value="4">
+                                            <label for="star29"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="starRating-6" id="star30" value="5">
+                                            <label for="star30"><i class="fa fa-star"></i></label>
+                                        </div>
+                                        <h2 class="question-title">其他建議與回饋</h2>
+                                        <div>
+                                            <textarea class="form-control" rows="5"></textarea>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">否</button>
+                                        <input type="submit" class="btn btn-primary" value="送出">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <script src="./dist/index.bundle.js"></script>
+    <script src="./src/js/jquery.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#header').load('header.html');
+            $('#footer').load('footer.html');
+
+            getCourse('new-course-all');
+
+        });
+
+        // 大頭貼上傳
+
+        const showThumbnail = (btnHasClicked) => {
+            const imgTag = btnHasClicked.parentNode.querySelector('.img-thumbnail');
+            const file = btnHasClicked.files[0];
+            const reader = new FileReader();
+
+            reader.onloadend = function () {
+                imgTag.src = reader.result;
+            };
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                imgTag.src = "";
+            }
+        };
+
+        // 心得上傳
+
+        $('#expUpload').on('change', function(){
+            var fileName = $(this).prop('files')[0].name
+            $('#expLabel').text(fileName)
+        });
+
+
+        function getCourse(pageName) {
+            $.ajax({
+                url: pageName + '.html',
+                success: function(data) {
+                    $('#newCourseContent').html(data);
+                }
+            })
+        }
+        
+
+    </script>
+</body>
+
+</html>
