@@ -1,19 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Microsoft Jhenghei';
+        }
+
+        .certificate-container {
+            width: 794px;
+            height: 1123px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: auto;
+            position: relative;
+        }
+
+        .certificate-container img {
+            width: 100%;
+            position: absolute;
+        }
+
+        .certificate-contain {
+            position: absolute;
+            text-align: center;
+            height: 1123px;
+            width: 100%;
+        }
+
+        .title-secondary {
+            font-size: 32px;
+            position: absolute;
+            width: 100%;
+            top: 100px;
+        }
+
+        .title-secondary-eng {
+            font-size: 16px;
+            position: absolute;
+            top: 140px;
+            width: 100%;
+        }
+
+        .title-third {
+            margin-top: 35px;
+            font-size: 24px;
+            position: absolute;
+            top: 160px;
+            width: 100%;
+        }
+
+        .title-third-eng {
+            font-size: 16px;
+            position: absolute;
+            top: 230px;
+            width: 100%;
+        }
+
+        .title-primary {
+            font-size: 32px;
+            position: absolute;
+            top: 350px;
+            width: 100%;
+        }
+
+        .main-info {
+            width: 100%;
+            margin: auto;
+            position: absolute;
+            top: 405px;
+            text-align: left;
+        }
+
+        .main-info p {
+            font-size: 24px;
+            width: 540px;
+            margin: auto;
+        }
+
+        .title-forth {
+            position: absolute;
+            bottom: 235px;
+            width: 600px;
+            text-align: left;
+            left: 130px;
+            font-size: 20px;
+        }
+
+        .certificate-footer {
+            position: absolute;
+            bottom: 130px;
+            width: 100%;
+            font-size: 20px;
+        }
+
+        .date-TW {
+            position: absolute;
+            left: 90px;
+        }
+
+        .date-EN {
+            position: absolute;
+            right: 75px;
+        }
+    </style>
 </head>
+
 <body onload="printPage()">
-    
-    <img src="./src/images/certificate-bg-150.jpg" style="width:794px;height:1123px;" />
+    <div class="certificate-container">
+        <img src="./src/images/certificate-bg-150.jpg" />
+        <div class="certificate-contain">
+            <h2 class="title-secondary">經濟部商業司</h1>
+                <p class="title-secondary-eng">Department of Commerce, MOEA</p>
+                <h3 class="title-third">受訓證書
+            </h2>
+            <p class="title-third-eng">Certificate of Completion</p>
+            <h1 class="title-primary">香茗茶行</h1>
+            <div class="main-info">
+                <p>
+                    於中華民國<span>108</span>年接受經濟部商業司主辦，財團法人商業發展研究院執行之「餐飲與零售業人才加值培訓計畫」，特頒此狀，以茲證明。
+
+                </p>
+            </div>
+            <div class="title-forth">
+                <p>司長</p>
+                <p class="title-forth-eng">Director General</p>
+            </div>
+
+            <div class="certificate-footer">
+                <span class="date-TW">中華民國<span>109</span>年<span>8</span>月<span>8</span>日</span>
+                <span class="date-EN"><span>Aug</span>, <span>8</span>, <span>2020</span></span>
+            </div>
+        </div>
+    </div>
 
     <script>
         function printPage() {
             window.print();
-            // window.close();
         }
     </script>
 </body>
+
 </html>

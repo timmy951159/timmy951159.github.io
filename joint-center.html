@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta property="og:title" content="..." />
+    <meta property="og:type" content="...">
+    <meta property="og:image" content="..." />
+    <meta property="og:description" content="...">
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div id="header"></div>
+        <div id="member-info">
+            <div class="member-info container">
+                <form>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-12">
+                            <div class="photo">
+                                <input type="file" class="custom-file-input" onchange="showThumbnail(this)">
+                                <img class="img-thumbnail" src="./src/images/user_default.png">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-12">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>單位名稱(全銜)</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>統一編號</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>店名</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>連絡電話</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>聯絡人姓名</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>電子信箱</label>
+                                        <input type="email"" class=" form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>行動電話</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>預計開課日期</label>
+                                        <input type="text" class="form-control" placeholder="ex: 2020/01/01" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>預計授課人數</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>開課類別</label>
+                                        <div class="w-100">
+                                            <select class="form-control">
+                                                <option>餐飲業</option>
+                                                <option>零售業</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="member-info__btn">
+                                <input type="submit" class="btn btn-primary" value="儲存">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div>
+            <nav id="courseCenterTab">
+                <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+                        aria-controls="nav-home" aria-selected="true"><img src="./src/images/Group 28.png">我要合辦</a>
+                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+                        aria-controls="nav-profile" aria-selected="false"><img src="./src/images/Group 29.png">我要核銷</a>
+                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+                        aria-controls="nav-contact" aria-selected="false"><img src="./src/images/Group 189.png">成果上傳</a>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">1
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+
+                    <div class="section-container">
+                        <div class="block-title">
+                            <div class="block-title__text">可核銷課程列表</div>
+                        </div>
+                        <div class="course-container">
+                            <div class="row course-row">
+                                <div class="col-lg-1 course-row__id">
+                                    1
+                                </div>
+                                <div class="col-lg-3 course-row__name">
+                                    猶似吾願當路百里鶴樓，不見千金可憐夕涼今夜黃金
+                                </div>
+                                <div class="col-lg-2 course-row__category">
+                                    課程類別 :
+                                    <span>行銷業務</span>
+                                </div>
+                                <div class="col-lg-2 course-row__info">
+                                    時間 : 2020-04-30(四) 09:30 ~ 16:30 <br>
+                                    地點 : 台灣高雄市鹽埕區中正四路274號 <br>
+                                    高雄國際會議中心
+                                </div>
+                                <div class="col-lg-2 course-row__teacher text-center">
+                                    講師 :
+                                    <span>劉故園</span>
+                                </div>
+                                <div class="col-lg-2 course-row__options">
+                                    <div class="btn-group-vertical text-center">
+                                        <button class="btn btn-primary"
+                                            onclick="window.open('certificate.html')">核銷申請</button>
+                                        <button class="btn btn-second" data-toggle="modal"
+                                            data-target="#questionnaireModal" data-dismiss="modal">暫存區</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row course-row">
+                                <div class="col-lg-1 course-row__id">
+                                    2
+                                </div>
+                                <div class="col-lg-3 course-row__name">
+                                    猶似吾願當路百里鶴樓，不見千金可憐夕涼今夜黃金
+                                </div>
+                                <div class="col-lg-2 course-row__category">
+                                    課程類別 :
+                                    <span>行銷業務</span>
+                                </div>
+                                <div class="col-lg-2 course-row__info">
+                                    時間 : 2020-04-30(四) 09:30 ~ 16:30 <br>
+                                    地點 : 台灣高雄市鹽埕區中正四路274號 <br>
+                                    高雄國際會議中心
+                                </div>
+                                <div class="col-lg-2 course-row__teacher text-center">
+                                    講師 :
+                                    <span>劉故園</span>
+                                </div>
+                                <div class="col-lg-2 course-row__options">
+                                    <div class="btn-group-vertical text-center">
+                                        <button class="btn btn-primary">核銷申請</button>
+                                        <button class="btn btn-second" data-toggle="modal"
+                                            data-target="#questionnaireModal" data-dismiss="modal">暫存區</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row course-row">
+                                <div class="col-lg-1 course-row__id">
+                                    3
+                                </div>
+                                <div class="col-lg-3 course-row__name">
+                                    猶似吾願當路百里鶴樓，不見千金可憐夕涼今夜黃金
+                                </div>
+                                <div class="col-lg-2 course-row__category">
+                                    課程類別 :
+                                    <span>行銷業務</span>
+                                </div>
+                                <div class="col-lg-2 course-row__info">
+                                    時間 : 2020-04-30(四) 09:30 ~ 16:30 <br>
+                                    地點 : 台灣高雄市鹽埕區中正四路274號 <br>
+                                    高雄國際會議中心
+                                </div>
+                                <div class="col-lg-2 course-row__teacher text-center">
+                                    講師 :
+                                    <span>劉故園</span>
+                                </div>
+                                <div class="col-lg-2 course-row__options">
+                                    <div class="btn-group-vertical text-center">
+                                        <button class="btn btn-primary">核銷申請</button>
+                                        <button class="btn btn-second" data-toggle="modal"
+                                            data-target="#questionnaireModal" data-dismiss="modal">暫存區</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page-navigation">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-container">
+                        <div class="block-title">
+                            <div class="block-title__text">辦理中課程列表</div>
+                        </div>
+                        <div class="course-container">
+                            <div class="row course-row">
+                                <div class="col-lg-1 course-row__id">
+                                    1
+                                </div>
+                                <div class="col-lg-3 course-row__name">
+                                    猶似吾願當路百里鶴樓，不見千金可憐夕涼今夜黃金
+                                </div>
+                                <div class="col-lg-2 course-row__category">
+                                    課程類別 :
+                                    <span>行銷業務</span>
+                                </div>
+                                <div class="col-lg-2 course-row__info">
+                                    時間 : 2020-04-30(四) 09:30 ~ 16:30 <br>
+                                    地點 : 台灣高雄市鹽埕區中正四路274號 <br>
+                                    高雄國際會議中心
+                                </div>
+                                <div class="col-lg-2 course-row__teacher text-center">
+                                    講師 :
+                                    <span>劉故園</span>
+                                </div>
+                                <div class="col-lg-2 course-row__options">
+                                    <div class="btn-group-vertical text-center">
+                                        <button class="btn btn-primary"
+                                            onclick="window.open('certificate.html')">修改課程</button>
+                                        <button class="btn btn-secondary" data-toggle="modal"
+                                            data-target="#questionnaireModal" data-dismiss="modal">取消課程</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row course-row">
+                                <div class="col-lg-1 course-row__id">
+                                    2
+                                </div>
+                                <div class="col-lg-3 course-row__name">
+                                    猶似吾願當路百里鶴樓，不見千金可憐夕涼今夜黃金
+                                </div>
+                                <div class="col-lg-2 course-row__category">
+                                    課程類別 :
+                                    <span>行銷業務</span>
+                                </div>
+                                <div class="col-lg-2 course-row__info">
+                                    時間 : 2020-04-30(四) 09:30 ~ 16:30 <br>
+                                    地點 : 台灣高雄市鹽埕區中正四路274號 <br>
+                                    高雄國際會議中心
+                                </div>
+                                <div class="col-lg-2 course-row__teacher text-center">
+                                    講師 :
+                                    <span>劉故園</span>
+                                </div>
+                                <div class="col-lg-2 course-row__options">
+                                    <div class="btn-group-vertical text-center">
+                                        <button class="btn btn-primary">修改課程</button>
+                                        <button class="btn btn-secondary" data-toggle="modal"
+                                            data-target="#questionnaireModal" data-dismiss="modal">取消課程</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row course-row">
+                                <div class="col-lg-1 course-row__id">
+                                    3
+                                </div>
+                                <div class="col-lg-3 course-row__name">
+                                    猶似吾願當路百里鶴樓，不見千金可憐夕涼今夜黃金
+                                </div>
+                                <div class="col-lg-2 course-row__category">
+                                    課程類別 :
+                                    <span>行銷業務</span>
+                                </div>
+                                <div class="col-lg-2 course-row__info">
+                                    時間 : 2020-04-30(四) 09:30 ~ 16:30 <br>
+                                    地點 : 台灣高雄市鹽埕區中正四路274號 <br>
+                                    高雄國際會議中心
+                                </div>
+                                <div class="col-lg-2 course-row__teacher text-center">
+                                    講師 :
+                                    <span>劉故園</span>
+                                </div>
+                                <div class="col-lg-2 course-row__options">
+                                    <div class="btn-group-vertical text-center">
+                                        <button class="btn btn-primary">修改課程</button>
+                                        <button class="btn btn-secondary" data-toggle="modal"
+                                            data-target="#questionnaireModal" data-dismiss="modal">取消課程</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page-navigation">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-container">
+                        <div class="block-title">
+                            <div class="block-title__text">審核中課程列表</div>
+                        </div>
+                        <div class="course-container">
+                            <div class="row course-row">
+                                <div class="col-lg-1 course-row__id">
+                                    1
+                                </div>
+                                <div class="col-lg-3 course-row__name">
+                                    猶似吾願當路百里鶴樓，不見千金可憐夕涼今夜黃金
+                                </div>
+                                <div class="col-lg-2 course-row__category">
+                                    課程類別 :
+                                    <span>行銷業務</span>
+                                </div>
+                                <div class="col-lg-2 course-row__info">
+                                    時間 : 2020-04-30(四) 09:30 ~ 16:30 <br>
+                                    地點 : 台灣高雄市鹽埕區中正四路274號 <br>
+                                    高雄國際會議中心
+                                </div>
+                                <div class="col-lg-2 course-row__teacher text-center">
+                                    講師 :
+                                    <span>劉故園</span>
+                                </div>
+                                <div class="col-lg-2 course-row__options">
+                                    <div class="btn-group-vertical text-center">
+                                        <span class="text-danger">審核中</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row course-row">
+                                <div class="col-lg-1 course-row__id">
+                                    2
+                                </div>
+                                <div class="col-lg-3 course-row__name">
+                                    猶似吾願當路百里鶴樓，不見千金可憐夕涼今夜黃金
+                                </div>
+                                <div class="col-lg-2 course-row__category">
+                                    課程類別 :
+                                    <span>行銷業務</span>
+                                </div>
+                                <div class="col-lg-2 course-row__info">
+                                    時間 : 2020-04-30(四) 09:30 ~ 16:30 <br>
+                                    地點 : 台灣高雄市鹽埕區中正四路274號 <br>
+                                    高雄國際會議中心
+                                </div>
+                                <div class="col-lg-2 course-row__teacher text-center">
+                                    講師 :
+                                    <span>劉故園</span>
+                                </div>
+                                <div class="col-lg-2 course-row__options">
+                                    <div class="btn-group-vertical text-center">
+                                        <span class="text-danger">審核中</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row course-row">
+                                <div class="col-lg-1 course-row__id">
+                                    3
+                                </div>
+                                <div class="col-lg-3 course-row__name">
+                                    猶似吾願當路百里鶴樓，不見千金可憐夕涼今夜黃金
+                                </div>
+                                <div class="col-lg-2 course-row__category">
+                                    課程類別 :
+                                    <span>行銷業務</span>
+                                </div>
+                                <div class="col-lg-2 course-row__info">
+                                    時間 : 2020-04-30(四) 09:30 ~ 16:30 <br>
+                                    地點 : 台灣高雄市鹽埕區中正四路274號 <br>
+                                    高雄國際會議中心
+                                </div>
+                                <div class="col-lg-2 course-row__teacher text-center">
+                                    講師 :
+                                    <span>劉故園</span>
+                                </div>
+                                <div class="col-lg-2 course-row__options">
+                                    <div class="btn-group-vertical text-center">
+                                       <span class="text-danger">審核中</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page-navigation">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">3</div>
+            </div>
+        </div>
+        <div id="footer"></div>
+    </div>
+
+    <script src="./dist/index.bundle.js"></script>
+    <script src="./src/js/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#header').load('header.html');
+            $('#footer').load('footer.html');
+
+
+        });
+    </script>
+</body>
+
+</html>
