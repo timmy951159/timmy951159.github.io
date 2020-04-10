@@ -61,7 +61,7 @@
                     </a>
                 </div>
                 <div class="col-lg-2 col-sm-4 col-6">
-                    <a href="/" class="cube bg-yellow">
+                    <a href="javascript:;" class="cube bg-yellow alert">
                         <img src="./src/images/Group 41.png" />
                         <div class="cube-text">表單下載</div>
                     </a>
@@ -219,7 +219,7 @@
                             <h1>學員登入</h1>
                         </div>
                         <div class="form__body">
-                            <form action="" method="post" id="myForm">
+                            <form action="" method="post">
                                 <div class="form-group">
                                     <input id="loginMobile" type="text" class="form-control" placeholder="請輸入手機號碼" required >
                                 </div>
@@ -364,7 +364,7 @@
                             <h1>合辦單位登入</h1>
                         </div>
                         <div class="form__body">
-                            <form action="" method="post" id="myForm">
+                            <form action="" method="post">
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="請輸入統編" required >
                                 </div>
@@ -562,6 +562,10 @@
 
         $('#cancel-btn').click(function () {
             $('#ad').addClass('d-none')
+        });
+
+        $('.alert').click(function() {
+            alert('建置當中...敬請期待 !');
         });
 
 
